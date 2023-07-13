@@ -1,29 +1,36 @@
 import {styled} from 'styled-components';
+import {Swiper} from 'swiper/react'
 
 
 export const MainContainer = styled.div`
   height: 100vh;
-  background-color: pink;
+  /* background-color: pink; */
+  background-image: url('/assets/kong.png');
   display: flex;
   flex-direction: column;
   font-family: 'Poppins', sans-serif;
+  background-size: cover;
 `;
 
 export const NavBar = styled.div`
-  background-color: yellow;
-  padding: 15px;
+  /* background-color: yellow; */
+  padding: 30px 50px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  color: #FFF;
+  font-family: Outfit;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.6px;
 
 `
 
 export const ContainerBody = styled.div`
-  background-color: skyblue;
+  /* background-color: skyblue; */
   flex: 1;
-`
-
-export const Footer = styled.div`
-  background-color: greenyellow;
 `
 
 export const Element = styled.span`
@@ -39,6 +46,11 @@ export const CenterNav = styled.div`
   flex:1;
   /* background-color: pink; */
   justify-content: center;
+
+  .title{
+    color: #FA4776;
+    font-size: 50px;
+  }
 `
 
 export const RightNav = styled.div`
@@ -53,8 +65,9 @@ export const ItemContent = styled.div`
   display: flex;
   flex-direction: column;
   gap: 15px;
-  padding: 70px;
-  background-color: #144f9b;
+  padding: 10px 70px;
+  padding-bottom: 20px;
+  /* background-color: #144f9b; */
   /* padding-top: 50px; */
 `
 export const Title = styled.span`
@@ -110,4 +123,49 @@ export const ButtonOutline = styled(Button)`
     background-color:white;
     color:black;
     opacity:1 }
+`
+
+export const MovieSlider = styled.div`
+  
+`
+
+export const Slide = styled.div`
+
+  border-radius: 20px;
+  /* background-color: pink; */
+  /* width: 150px; */
+    height: 300px;
+    width: 200px;
+    position: absolute;
+    z-index: 0;
+
+  img{
+    border-radius: 20px;
+    height: 300px;
+    width: 200px;
+    z-index: 1;
+  }
+  &:hover{
+    transform: scale(1.1);
+    border: 2px solid #FA4776;
+ 
+  }
+
+`
+export const SwiperStyle = styled(Swiper)`
+  background-color: white;
+  padding: 20px !important;
+  margin: 20px;
+  /* opacity: 0.1; */
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(103, 101, 113, 0.34);
+  height: 300px;
+  /* overflow: visible; */
+  .swiper-wrapper{
+    padding-left: 35px;
+  }
+  
+
 `

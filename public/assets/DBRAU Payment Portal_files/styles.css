@@ -1,0 +1,121 @@
+/* You can add global styles to this file, and also import other style files */
+html {
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.toplink {
+    background: #191919;
+    color: #edeeee;
+    border-bottom: 1px solid #000;
+}
+
+    .toplink .social-icons {
+        padding: 0;
+        display: block;
+        overflow: hidden;
+    }
+
+        .toplink .social-icons div {
+            border-left: 1px solid #412f29;
+            text-decoration: none;
+            font-size: .9em;
+            padding: 2px 10px;
+            overflow: hidden;
+        }
+
+            .toplink .social-icons div.helpdesk {
+                color: #dbdddd;
+                background: #c10505;
+            }
+
+            .toplink .social-icons div.plain-content {
+                color: #dbdddd;
+            }
+
+                .toplink .social-icons div.plain-content i {
+                    color: #d5e551;
+                }
+
+            .toplink .social-icons div.last,
+            .toplink .right-side-icons div.last {
+                border-right: 1px solid #412f29;
+            }
+
+    .toplink .right-side-icons {
+        padding: 0;
+        display: block;
+        overflow: hidden;
+        float: right;
+    }
+
+        .toplink .right-side-icons div {
+            border-left: 1px solid #e8e7e7;
+            padding: 0 10px;
+            text-align: center;
+            height: 25px;
+            line-height: 25px;
+            overflow: hidden;
+            display: block;
+            float: left;
+            color: #373737;
+        }
+
+        .toplink .right-side-icons div {
+            color: #373737;
+        }
+
+            .toplink .right-side-icons div.donate {
+                color: #c10505;
+                font-weight: bold;
+            }
+
+.public-header .logo {
+    height: 75px;
+}
+
+.public-header .university-name {
+    color: navy;
+}
+
+.public-header .university-name-hindi {
+    color: red;
+}
+
+input.ng-touched.ng-invalid:not(form),
+select.ng-touched.ng-invalid:not(form) {
+    border: 1px solid #de3545;
+}
+
+/**********************************************************************************************************/
+/**********************************************************************************************************/
+
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+
+    .public-header .logo {
+        height: 50px;
+    }
+
+    .public-header .university-name {
+        font-size: 1em;
+    }
+
+    .public-header .university-name-hindi {
+        font-size: 1em;
+    }
+
+    .public-header .university-tagline {
+        font-size: .8em;
+    }
+}
