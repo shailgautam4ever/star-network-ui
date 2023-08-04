@@ -1,28 +1,50 @@
 import './App.css';
 import 'swiper/css';
-import { MainContainer, ContainerBody } from './StyledComponent';
-import Navbar from './components/Navbar';
-import MovieContent from './components/MovieContent';
-import Slider from './components/Slider';
-
+import { MainContainer } from "./StyledComponent"
+import Navbar from "./components/Navbar"
+import { navLeftItems } from "./data"
+import { Route, Routes } from 'react-router';
+import { LandingPage } from './pages/LandingPage';
+import Movies from './pages/Movies';
+import SignUp from './pages/SignUp';
+import { AuthContext } from './context/AuthContext';
+import { useState } from 'react';
+import { SignUpForm } from './pages/SignUpForm';
 
 function App() {
-  const navLeftItems = ["Movies", "TV Shows", "Documantries" ]
-  const sliderItems = ['/assets/starwars.jpeg','/assets/oppenheimer.jpeg','/assets/frozen2.jpeg','/assets/starwars.jpeg','/assets/starwars.jpeg','/assets/starwars.jpeg','/assets/kong.png']
-  const movie = {
-    title:"STAR WARS",
-    tagline:"THE RISE OF SKYWALKER",
-    description:"The surviving members of star wars begins a new war against the people who are bad and are likely to win this battle to get to know more visits theaters.",
-    rating:4
+
+  const userString = localStorage.getItem("user")
+  const user = JSON.parse(userString)
+  const [userState, setUser] = useState({})
+  console.log("State ", userState)
+  console.log("user",user)
+  if (!user) {
+    return (
+      <AuthContext.Provider value={{ user: userState, setUser }}>
+        <MainContainer bg=''>
+          <Navbar items={navLeftItems} />
+          <Routes>
+            <Route path='/' element={<LandingPage />} />
+            <Route path='/sign-up' element={<SignUp />} />
+            <Route path='/sign-in' element={<SignUp />} />
+            <Route path='/form' element={<SignUpForm/>} />
+          </Routes>
+        </MainContainer>
+      </AuthContext.Provider>
+    )
   }
   return (
-    <MainContainer>
-      <Navbar items={navLeftItems}/>
-      <ContainerBody>
-        <MovieContent {...movie}/>
-        <Slider slides={sliderItems}/>
-      </ContainerBody>
-    </MainContainer>
+    <AuthContext.Provider value={{ user: userState, setUser }}>
+      <MainContainer bg=''>
+        <Navbar items={navLeftItems} />
+        <Routes>
+          <Route path='/' element={<LandingPage />} />
+          <Route path='/movies' element={<Movies />} />
+          <Route path='/form' element={<SignUpForm/>} />
+        </Routes>
+      </MainContainer>
+    </AuthContext.Provider>
+
   );
 }
 
