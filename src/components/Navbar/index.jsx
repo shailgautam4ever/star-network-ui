@@ -1,21 +1,21 @@
 import { BsBell, BsSearch } from "react-icons/bs"
-import { CenterNav, Element, LeftNav, NavBar, RightNav } from "../../StyledComponent"
-
+import { CenterNav, Element, LeftNav, Link, NavBar, RightNav } from "../../StyledComponent"
 const Navbar = ({items})=>{
   return(
     <NavBar>
     <LeftNav>
     {items.map((item,i)=>(
-      <Element>{item}</Element>
+      <Link to={item.url}><Element>{item.name}</Element></Link>
     ))}
     </LeftNav>
     <CenterNav>
-      <span className='title'>WatchTV</span>
+      <Link to='/'><span className='title'>WatchTV</span></Link>
     </CenterNav>
     <RightNav>
     <BsSearch size={20}/>
     <BsBell size={20}/>
-    <span className='.title'>Sign Up</span>
+    <Link to='/sign-up'><span className='title'>Sign Up</span></Link>
+    <Link to='/sign-in'><span className='title'>Sign in</span></Link>
     </RightNav>
   </NavBar>
   )
