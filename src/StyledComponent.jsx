@@ -1,11 +1,12 @@
 import {styled} from 'styled-components';
 import {Swiper} from 'swiper/react'
+import { Link as RouterLink } from "react-router-dom";
 
 
 export const MainContainer = styled.div`
-  height: 100vh;
+  min-height: 100vh;
   /* background-color: pink; */
-  background-image: url('/assets/kong.png');
+  ${({bg})=>(bg)? `background-image: url('${bg}');`: `background-color: white;`}
   display: flex;
   flex-direction: column;
   font-family: 'Poppins', sans-serif;
@@ -18,7 +19,7 @@ export const NavBar = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #FFF;
+  color: #121111;
   font-family: Outfit;
   font-size: 20px;
   font-style: normal;
@@ -35,6 +36,7 @@ export const ContainerBody = styled.div`
 
 export const Element = styled.span`
   padding: 10px;
+  color: black;
 `
 
 export const LeftNav = styled.div`
@@ -58,7 +60,8 @@ export const RightNav = styled.div`
   justify-content: flex-end;
   gap: 20px;
   /* background-color: pink; */
-  width: 200px;
+  width: 300px;
+  
 `
 
 export const ItemContent = styled.div`
@@ -166,6 +169,28 @@ export const SwiperStyle = styled(Swiper)`
   .swiper-wrapper{
     padding-left: 35px;
   }
-  
+`
 
+export const Link = styled(RouterLink)`
+  text-decoration: none;
+  color: #FA4776;
+`
+export const FormContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  /* background-color: pink; */
+  /* backdrop-filter: blur(10px); */
+
+ 
+  label{
+    /* color: white !important; */
+  }
+  form{
+    background-color: white;
+    padding: 5rem;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px #eee;
+  }
 `
