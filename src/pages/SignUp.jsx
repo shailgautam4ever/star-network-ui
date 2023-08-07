@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Button, Checkbox, Form, Input, Upload } from 'antd';
+import { Button, Checkbox, Form, Input } from 'antd';
 import { FormContainer } from '../StyledComponent';
 import { useLocation } from 'react-router';
 import axios from 'axios';
