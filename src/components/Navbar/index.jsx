@@ -14,7 +14,7 @@ const Navbar = ({items})=>{
     <RightNav>
     <BsSearch size={20}/>
     <BsBell size={20}/>
-    <Link to='/sign-up'><span className='title'>Sign Up</span></Link>
+    <Link to='/form'><span className='title'>Sign Up</span></Link>
     <Link to='/sign-in'><span className='title'>Sign in</span></Link>
     </RightNav>
   </NavBar>

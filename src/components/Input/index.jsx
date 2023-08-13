@@ -7,8 +7,20 @@ export const Input = ({
   list,
   options=[],
   textArea=false,
+  cb,
   ...props
 })=>{
+  const handleOnChange = (e)=>{
+    const {value,name, type, checked} = e.target
+    console.log("event", e)
+      cb(name, value, type, checked)
+      console.table({
+        name,
+        value,
+        checked,
+        type
+      }) 
+  }
   if(["radio","checkbox"].includes(type.toLowerCase())){
     return(
       <ItemWrapper>
@@ -16,7 +28,7 @@ export const Input = ({
         {options.map((val,i )=>{
           return(
             <>
-          <input type={type} id={val} name={labelValue}/>
+          <input type={type} id={val} onChange={handleOnChange} name={labelValue} value={val}/>
           <label for={val}>{val}</label> 
             </>
           )
@@ -28,7 +40,7 @@ export const Input = ({
     <ItemWrapper>
       <label for={id}>{labelValue}</label>
       {
-        (textArea)? <textarea {...props}/> : <input type={type} list={list} id={id} {...props}/>
+        (textArea)? <textarea {...props}/> : <input onChange={handleOnChange} type={type} list={list} id={id} {...props}/>
       }
       {
         (options.length)? (
